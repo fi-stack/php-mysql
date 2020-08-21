@@ -24,6 +24,7 @@ $results = mysqli_fetch_all($query, MYSQLI_ASSOC);
             <th>Alamat</th>
             <th>Umur</th>
             <th>Jenis Kelamin</th>
+            <th>Pilihan</th>
         </tr>
         <?php foreach ($results as $result) : ?>
             <tr>
@@ -31,6 +32,9 @@ $results = mysqli_fetch_all($query, MYSQLI_ASSOC);
                 <td><?= $result['alamat']; ?></td>
                 <td><?= $result['umur']; ?></td>
                 <td><?= $result['jenis_kelamin']; ?></td>
+                <td>
+                    <a href="edit.php?id=<?= $result['id']; ?>">Edit</a>
+                </td>
             </tr>
         <?php endforeach; ?>
     </table>
